@@ -20,10 +20,17 @@
   import { Inertia } from '@inertiajs/inertia'
   
   export default {
+    data() {
+    return {
+        tableSelected: false,
+       
+        };
+    },
     methods: {
       confirmTable(number) {
         if (window.confirm(`Voulez-vous sélectionner la table ${number} ?`)) {
           this.createOrder(number);
+          this.tableSelected = true;
         }
       },
       createOrder(number) {

@@ -1,8 +1,15 @@
 import { createApp } from 'vue';
-import TableSelect from './components/TableSelect.vue';
+import ArticlesListe from './components/ArticlesListe.vue';
+import SelectTable from './components/TableSelect.vue';
 
-createApp({
-  components: {
-    'select-table': TableSelect,
-  }
+const app = Vue.createApp({
+    data() {
+        return {
+            tableSelected: false,
+        };
+    },
+    components: {
+        'articles-liste': ArticlesListe,
+        'select-table': SelectTable
+    }
 }).mount('#app');

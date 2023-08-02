@@ -16,6 +16,7 @@
     data() {
       return {
         articles: [],
+        
       };
     },
     async created() {

@@ -11,9 +11,11 @@
 	@vite('resources/css/app.css')
 </head>
 <body>
-	<div id="app">
-    	<select-table></select-table>
+<div id="app">
+    <select-table v-if="!tableSelected"></select-table>
+    <articles-liste></articles-liste>
 	</div>
+
 
 	@vite('resources/js/app.js')
 </body>
