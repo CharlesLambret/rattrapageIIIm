@@ -17,6 +17,12 @@ class CommandeController extends Controller
     {
         return view('commandes.create');
     }
+    
+    public function createWithTable(int $table_id)
+{
+    $commande = Commande::create(['table' => $table_id]);
+    return response()->json($commande, 201);
+}
 
     public function store(Request $request)
     {

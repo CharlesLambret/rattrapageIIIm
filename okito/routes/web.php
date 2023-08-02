@@ -11,3 +11,7 @@ Route::resource('articles', ArticleController::class);
 Route::resource('tables', TableController::class);
 Route::resource('commandes', CommandeController::class);
 Route::resource('article_commandes', ArticleCommandeController::class);
+
+Route::get('/', function () {
+    return view('app');
+});
