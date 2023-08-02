@@ -2,16 +2,28 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
-class DatabaseSeeder extends Seeder
+use App\Models\Articles;
+use App\Models\Commandes;
+use App\Models\ArticlesCommandes;
+class test extends Seeder
 {
-    public function run()
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
     {
-        $this->call(ArticleSeeder::class);
-        $this->call(CommandesSeeder::class);
-        $this->call(ArticleCommandesSeeder::class);
-        $this->call(TablesSeeder::class); 
+        $articles = Articles::factory(10)->create();
+        $commandes = Commandes::factory(10)->create();
+        
+        $seeds = $articles + $commandes;
+
+        foreach($seeds as $seed) {
+            ArticlesCommandes::factory()->create([
+                'articles_id' => $articles->id,
+                'commandes_id' => $commandes->id,
+            ]);
+        }
     }
 }

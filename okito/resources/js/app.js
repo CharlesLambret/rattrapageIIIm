@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 import ArticlesListe from './components/ArticlesListe.vue';
 import SelectTable from './components/TableSelect.vue';
 
-const app = Vue.createApp({
+const app = createApp({
     data() {
         return {
             tableSelected: false,
