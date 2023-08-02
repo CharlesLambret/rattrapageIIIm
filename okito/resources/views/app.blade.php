@@ -8,8 +8,9 @@
 	@vite('resources/css/app.css')
 </head>
 <body>
-	<div id="app"></div>
-    <select-table></select-table>
+	<div id="app">
+    	<select-table></select-table>
+	</div>
 	<h1>Test</h1>
 	@vite('resources/js/app.js')
 </body>

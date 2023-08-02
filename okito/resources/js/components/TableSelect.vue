@@ -37,7 +37,8 @@ export default {
         },
 
         async selectTable(table_id) {
-        axios.post(`/api/commandes/createWithTable/${table_id}`)
+        axios.post(`/commandes/createWithTable/${table_id}`)
+
             .then(response => {
                 
             })
