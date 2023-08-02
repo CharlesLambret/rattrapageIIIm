@@ -1,5 +1,3 @@
-
-
 <template>
     <div>
       <button v-for="number in 40" :key="number" @click="confirmTable(number)">
@@ -9,8 +7,8 @@
   </template>
   
   <script>
-  import axios from 'axios'
-
+  import { Inertia } from '@inertiajs/inertia'
+  
   export default {
     methods: {
       confirmTable(number) {
@@ -18,17 +16,16 @@
           this.createOrder(number);
         }
       },
-      
       createOrder(number) {
-        axios.post(`/commandes`, { table: number })
-
-            .then(response => {
-                console.log("commande créee")
-            })
-            .catch(error => {
-                console.log("erreur", error)
-            });
+        Inertia.post(('/commandes'), { table: number })
+          .then(response => {
+            console.log("commande créee")
+          })
+          .catch(error => {
+            console.log("erreur", error)
+          });
       },
     },
   };
   </script>
+  

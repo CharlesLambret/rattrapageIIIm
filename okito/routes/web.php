@@ -8,11 +8,9 @@ use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\ArticleCommandeController;
 
 Route::resource('articles', ArticleController::class);
-Route::resource('commandes', CommandeController::class);
+Route::resource('commandes', CommandesController::class);
 Route::resource('article_commandes', ArticleCommandeController::class);
 
 Route::get('/', function () {
     return view('app');
 });
-
-Route::post('/commandes/{table_id}', [CommandeController::class, 'store'])->name('commandes.store');
