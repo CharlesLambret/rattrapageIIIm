@@ -4,9 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Articles;
-use App\Models\Commandes;
-use App\Models\ArticlesCommandes;
+use App\Models\Article;
+use App\Models\Commande;
+use App\Models\ArticleCommande;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,16 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $articles = Articles::factory(10)->create();
-        $commandes = Commandes::factory(10)->create();
+        $articles = Article::factory(10)->create();
+        $commandes = Commande::factory(10)->create();
         
-        $seeds = $articles + $commandes;
-
-        foreach($seeds as $seed) {
-            ArticlesCommandes::factory()->create([
-                'articles_id' => $articles->id,
-                'commandes_id' => $commandes->id,
+        for ($i = 0; $i >= $articles->count(); $i++) {
+            ArticleCommande::factory()->create([
+              'articles_id' => $articles[$i]->id,
+              'commandes_id' => $commandes[$i]->id,
             ]);
-        }
+          }
     }
 }

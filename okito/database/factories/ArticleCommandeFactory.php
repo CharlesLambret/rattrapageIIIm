@@ -2,18 +2,21 @@
 
 namespace Database\Factories;
 
+use App\Models\Commande;
+use App\Models\Article;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\test>
  */
-class CommandesFactory extends Factory
+class ArticleCommandeFactory extends Factory
 {
 
     public function definition(): array
     {
         return [
-            'table' => fake()->randomNumber(2),
+            'commandes_id' => Commande::factory(),
+            'Article_id' => Article::factory(),
         ];
     }
 }

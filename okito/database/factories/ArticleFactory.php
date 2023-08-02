@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\test>
  */
-class ArticlesFactory extends Factory
+class ArticleFactory extends Factory
 {
 
     public function definition(): array
@@ -21,7 +21,7 @@ class ArticlesFactory extends Factory
             ]),
             'prix' => fake()->randomFloat(2, 1, 15),
             'description' => fake()->realText(),
-            'url' => fake()->realText(),
+            'url' => fake()->url(),
         ];
     }
 }

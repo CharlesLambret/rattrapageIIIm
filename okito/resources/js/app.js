@@ -1,9 +1,17 @@
-import Vue from 'vue';
-import CreateCommand from './Pages/Commandes/Create.vue';
+import './bootstrap';
+import '../css/app.css';
 
-const app = new Vue({
-    el: '#app',
-    components: {
-        'create-command': CreateCommand
+import { createApp, h } from 'vue';
+import { createInertiaApp } from '@inertiajs/inertia';
+
+createInertiaApp({
+    resolve: (name) => {
+        const pages = import.meta.glob('./Pages/**/*.vue', { eager: true });
+        return pages[`./Pages${name}.vue`];
+    },
+    setup({ el, App, props, plugin }) {
+        createApp({ render: () => h(App, props) })
+            .use(plugin)
+            .mount(el);
     }
 });

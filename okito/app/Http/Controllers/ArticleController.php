@@ -3,49 +3,49 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Articles;
+use App\Models\Article;
 
-class ArticlesController extends Controller
+class ArticleController extends Controller
 {
     public function index()
     {
-        $Articles = Articles::all();
-        return view('Articles.index', compact('Articles'));
+        $Article = Article::all();
+        return view('Article.index', compact('Article'));
     }
 
     public function create()
     {
-        return view('Articles.create');
+        return view('Article.create');
     }
 
     public function store(Request $request)
     {
-        $Articles = Articles::create($request->all());
-        return redirect()->route('Articles.index')
-                        ->with('success','Articles created successfully.');
+        $Article = Article::create($request->all());
+        return redirect()->route('Article.index')
+                        ->with('success','Article created successfully.');
     }
 
-    public function show(Articles $Articles)
+    public function show(Article $Article)
     {
-        return view('Articles.show',compact('Articles'));
+        return view('Article.show',compact('Article'));
     }
 
-    public function edit(Articles $Articles)
+    public function edit(Article $Article)
     {
-        return view('Articles.edit',compact('Articles'));
+        return view('Article.edit',compact('Article'));
     }
 
-    public function update(Request $request, Articles $Articles)
+    public function update(Request $request, Article $Article)
     {
-        $Articles->update($request->all());
-        return redirect()->route('Articles.index')
-                        ->with('success','Articles updated successfully');
+        $Article->update($request->all());
+        return redirect()->route('Article.index')
+                        ->with('success','Article updated successfully');
     }
 
-    public function destroy(Articles $Articles)
+    public function destroy(Article $Article)
     {
-        $Articles->delete();
-        return redirect()->route('Articles.index')
-                        ->with('success','Articles deleted successfully');
+        $Article->delete();
+        return redirect()->route('Article.index')
+                        ->with('success','Article deleted successfully');
     }
 }
