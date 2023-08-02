@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div v-for="article in articles" :key="article.id">
+      <div v-for="article in articles" :key="article.id" class="card" style="width:18rem">
         <h2>{{ article.nom }}</h2>
         <p>{{ article.description }}</p>
         <img :src="article.url" alt="Article image">
