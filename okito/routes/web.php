@@ -2,14 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\CommandesController;
-use App\Http\Controllers\ArticleCommandesController;
+use App\Http\Controllers\CommandeController;
 
-Route::resource('articles', ArticleController::class);
-Route::resource('commandes', CommandesController::class);
-Route::resource('article_commandes', ArticleCommandesController::class);
+Route::resource('commandes', CommandeController::class);
 
 Route::get('/', function () {
-    return view('app');
+    return redirect()->route('commandes.create');
 });

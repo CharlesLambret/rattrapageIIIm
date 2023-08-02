@@ -6,12 +6,13 @@ use App\Models\Commande;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class CommandesController extends Controller
+class CommandeController extends Controller
 {
     public function index()
     {
-        $commandes = Commande::all();
-        return view('commandes.index', compact('commandes'));
+        return Inertia::render('Commandes/Index', [
+            'commandes' => Commande::all()->load('articles')
+        ]);
     }
 
     public function create()
@@ -28,7 +29,7 @@ class CommandesController extends Controller
         Commande::create($request->only([
             'table',
         ]));
-        return redirect()->route('commandes.index')
+        return redirect()->route('commandes.create')
             ->with('success','Commande created successfully.');
     }
 
