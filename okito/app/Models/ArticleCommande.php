@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ArticleCommande extends Model
+class ArticlesCommandes extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['idcommande', 'idarticle'];
+    protected $fillable =[
+        'commandes_id',
+        'articles_id',
+    ];
 }
