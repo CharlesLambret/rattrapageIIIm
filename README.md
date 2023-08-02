@@ -5,9 +5,9 @@ Rattrapage de Charles Lambret en Laravel / Vue JS
 Contexte destiné aux professeurs : n'ayant pas obtenu les dates & modalités de rattrapage avant le 27, date à laquelle j'étais en voyage sans possibilité d'accéder à un ordinateur, je n'ai pu commencer à travailler sur le projet que le 1/08 tard le soir en rentrant de ce voyage. Cela explique l'irrégularité des commits, pour lesquels je ferai malgré tout en sorte de les poster régulièrement et proprement à partir du moment ou je commencerai le devoir. 
 
 Lancer le projet : 
-cd okito 
-npm install 
-composer install 
+cd okito -
+npm install -
+composer install -
 npm run dev + php artisan serve 
 
 Vidéo de présentation non disponible pour l'instant. 
