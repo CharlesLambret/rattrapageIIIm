@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('article_commandes', function (Blueprint $table) {
-            $table->idcommande();
-            $table->idarticle();
+            $table->int('idcommande');
+            $table->int('idarticle');
         });
     }
 
