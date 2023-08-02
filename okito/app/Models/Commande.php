@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Commande extends Model
 {
@@ -16,8 +17,8 @@ class Commande extends Model
         'created_at'
     ];
 
-    public function articles() : HasMany
+    public function articles() : HasManyThrough
     {
-        return $this->hasMany(Article::class);
+        return $this->hasManyThrough(Article::class, 'commande_articles');
     }
 }

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Article extends Model
 {
@@ -19,8 +19,8 @@ class Article extends Model
         'created_at'
     ];
 
-    public function commande() : HasOne
+    public function commandes() : HasManyThrough
     {
-        return $this->hasOne(Commande::class);
+        return $this->hasManyThrough(Commande::class, 'commande_articles');
     }
 }
