@@ -14,16 +14,15 @@ return new class extends Migration
         Schema::create('articles_commandes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('commandes_id')
-            ->after('id')
-            ->constrained('commandes')
-            ->onDelete('cascade');
+                ->constrained('commandes')
+                ->onDelete('cascade');
             $table->foreignId('articles_id')
-            ->after('id')
-            ->constrained('articles')
-            ->onDelete('cascade');
+                ->constrained('articles')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
