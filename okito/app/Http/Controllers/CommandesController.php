@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Commande;
+use Illuminate\Http\Request;
+use Inertia\Inertia;
 
-class CommandeController extends Controller
+class CommandesController extends Controller
 {
     public function index()
     {
@@ -15,10 +16,8 @@ class CommandeController extends Controller
 
     public function create()
     {
-        return view('commandes.create');
+        return Inertia::render('Commandes/Create');
     }
-
-
 
     public function store(Request $request)
     {
@@ -30,7 +29,7 @@ class CommandeController extends Controller
             'table',
         ]));
         return redirect()->route('commandes.index')
-                        ->with('success','Commande created successfully.');
+            ->with('success','Commande created successfully.');
     }
 
     public function show(Commande $commande)
