@@ -10,6 +10,7 @@
   
   <script>
   import axios from 'axios'
+
   export default {
     methods: {
       confirmTable(number) {
@@ -17,8 +18,9 @@
           this.createOrder(number);
         }
       },
+      
       createOrder(number) {
-        axios.post(`/commandes/createWithTable/${number}`)
+        axios.post(`/commandes`, { table: number })
 
             .then(response => {
                 console.log("commande créee")

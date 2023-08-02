@@ -14,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/commandes/createWithTable/{table_id}', [App\Http\Controllers\CommandeController::class, 'createWithTable']);
 
 

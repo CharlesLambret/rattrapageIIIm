@@ -14,3 +14,5 @@ Route::resource('article_commandes', ArticleCommandeController::class);
 Route::get('/', function () {
     return view('app');
 });
+
+Route::post('/commandes/{table_id}', [CommandeController::class, 'store'])->name('commandes.store');
