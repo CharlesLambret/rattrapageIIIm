@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/commandes/createWithTable/{table_id}', [App\Http\Controllers\CommandeController::class, 'createWithTable']);
-Route::get('/api/tables', [App\Http\Controllers\TableController::class, 'index']);
+
 

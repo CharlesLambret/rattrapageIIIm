@@ -11,7 +11,7 @@
 	<div id="app">
     	<select-table></select-table>
 	</div>
-	<h1>Test</h1>
+
 	@vite('resources/js/app.js')
 </body>
 </html>

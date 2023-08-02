@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ArticleCommande extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['idcommande', 'idarticle'];
 }
