@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Articles;
 use App\Models\Commandes;
 use App\Models\ArticlesCommandes;
-class test extends Seeder
+class DatabaseSeeder extends Seeder
 {
     /**
      * Run the database seeds.

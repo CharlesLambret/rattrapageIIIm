@@ -13,14 +13,14 @@
 <body>
 <div id="app">
 
-    <select-table v-if="!tableSelected"></select-table>
-    <articles-liste></articles-liste>
-	</div>
+    <create-commande></create-commande>
+	
 
 	<footer>
 		<button class="btn btn-success">Commander</button>
 		
 	</footer>
 	@vite('resources/js/app.js')
+	
 </body>
 </html>

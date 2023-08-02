@@ -1,15 +1,9 @@
-import { createApp } from 'vue';
-import ArticlesListe from './components/ArticlesListe.vue';
-import SelectTable from './components/TableSelect.vue';
+import Vue from 'vue';
+import CreateCommand from './Pages/Commandes/Create.vue';
 
-const app = createApp({
-    data() {
-        return {
-            tableSelected: false,
-        };
-    },
+const app = new Vue({
+    el: '#app',
     components: {
-        'articles-liste': ArticlesListe,
-        'select-table': SelectTable
+        'create-command': CreateCommand
     }
-}).mount('#app');
+});
